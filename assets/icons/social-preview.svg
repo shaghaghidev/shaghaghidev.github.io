@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a0c10"/>
+  <circle cx="1020" cy="120" r="260" fill="#e9b872" opacity="0.08"/>
+  <circle cx="120" cy="560" r="200" fill="#6fe3c4" opacity="0.06"/>
+  <g font-family="'JetBrains Mono', monospace" fill="#4d5364" font-size="20">
+    <text x="90" y="140">$ whoami</text>
+  </g>
+  <text x="88" y="260" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="72" fill="#e8eaef">Abolfazl <tspan fill="#9198aa">Shaghaghi</tspan></text>
+  <text x="90" y="330" font-family="'JetBrains Mono', monospace" font-size="30" fill="#e9b872">Python Tool Builder</text>
+  <text x="90 " y="390" font-family="sans-serif" font-size="24" fill="#9198aa">Python &amp; AI automation tools — live GitHub-powered portfolio</text>
+  <g font-family="'JetBrains Mono', monospace" font-size="20" fill="#6fe3c4">
+    <text x="90" y="480">github.com/shaghaghidev</text>
+  </g>
+  <rect x="88" y="520" width="1024" height="1" fill="#1e222c"/>
+  <text x="90" y="570" font-family="'JetBrains Mono', monospace" font-size="16" fill="#4d5364">Python · AI · Automation · Telegram Bots</text>
+</svg>
