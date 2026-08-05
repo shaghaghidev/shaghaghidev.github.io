@@ -1,102 +1,104 @@
-# Portfolio — shaghaghidev
+# shaghaghidev.github.io
 
-Live at **https://shaghaghidev.github.io**
+This is my portfolio: **https://shaghaghidev.github.io**
 
-Static, dependency-free portfolio. Project data, GitHub stats, activity, and
-the language/topic breakdown are fetched live from the GitHub REST API in
-the browser — nothing about *projects* is hardcoded in the HTML. Bio,
-timeline, and certificates are hand-authored (real history/credentials that
-don't live on GitHub), and everything else updates itself.
+I got tired of portfolios that are just a paragraph of claims and a
+screenshot from six months ago. So I built this one to pull everything —
+project list, stars, languages, commit activity — straight from the GitHub
+API, live, every time someone opens the page. If it's out of date, that
+means GitHub is out of date, not this site. I don't want to remember to
+"update my portfolio" ever again.
 
-## Structure
+The only things I actually wrote by hand are my bio, my timeline, and my
+certificates — because those aren't things GitHub knows about.
+
+## What's in here
 
 ```
-index.html                 semantic markup, all sections
-assets/css/style.css       one stylesheet, CSS custom properties for theming
-assets/js/config.js        the ONLY hardcoded data: identity, copy, pin order, timeline, certificates
-assets/js/github-api.js    GitHub API client (with sessionStorage caching)
-assets/js/app.js           renders every section, wires up search/filter/palette/theme/form
-assets/icons/              favicons + social preview (svg + png fallback)
-sitemap.xml, robots.txt    SEO
+index.html                 the page
+assets/css/style.css       one stylesheet, no framework
+assets/js/config.js        everything I hand-write: bio, timeline, certificates, pinned repos
+assets/js/github-api.js    talks to the GitHub REST API, caches responses so I don't hit rate limits
+assets/js/app.js           renders every section, search/filter, command palette, theme, contact form
+assets/icons/              favicons + social preview image
+sitemap.xml, robots.txt    SEO basics
 ```
 
-## Sections
+No build step, no framework, no npm install. Plain HTML/CSS/JS. I like
+being able to open one file and understand the whole thing.
 
-| Section | Source |
+## What's live vs. what I wrote
+
+| Section | Where it comes from |
 |---|---|
 | Hero stats (repos, stars, followers, contributions) | Live — GitHub API |
-| About | Authored — `CONFIG.about` |
-| Stack (Languages / Topics tabs) | Live — real language bytes + real repo topics from GitHub |
-| Activity (heatmap, streaks, Top Languages, Repo Summary) | Live — GitHub + contribution API |
-| Now Working On | Live — most recently pushed repo |
-| Timeline | Authored — `CONFIG.timeline` (covers pre-GitHub history: WordPress, university, etc.) |
-| Certificates | Authored — `CONFIG.certificates`, repeatable card component |
-| Projects (search + filter) | Live — GitHub API, README-derived descriptions as fallback |
-| Contact | Static form → validated client-side → `mailto:` |
+| About | Me, in `config.js` |
+| Stack (Languages / Topics) | Live — actual language bytes and topics from my repos |
+| Activity (heatmap, streaks, top languages, repo summary) | Live — GitHub + contribution API |
+| Now Working On | Live — whichever repo I pushed to most recently |
+| Timeline | Me, in `config.js` — covers stuff that never touched GitHub (WordPress sites, university) |
+| Certificates | Me, in `config.js` — repeatable, just add another entry |
+| Projects | Live — GitHub API, falls back to README text if a repo has no description |
+| Contact | Just a validated form that opens a `mailto:` — no backend, I don't need one |
 
-## Already deployed
+## How I deploy it
 
-This is pushed to `shaghaghidev/shaghaghidev.github.io` with **Settings →
-Pages → Deploy from a branch → `main` / root**. To ship an update:
+It's already live at `shaghaghidev/shaghaghidev.github.io`, set to deploy
+from `main` / root under Settings → Pages. To push a change:
 
 ```
 git add .
-git commit -m "update: <what changed>"
+git commit -m "update: whatever I changed"
 git push
 ```
 
-GitHub Pages redeploys automatically within a minute or two — no build step.
+GitHub Pages picks it up in a minute or two. No build, nothing else to run.
 
-## When you get a custom domain
+## If I get a custom domain later
 
-Update these four places (all currently set to `https://shaghaghidev.github.io`):
+Four places to update (all currently `https://shaghaghidev.github.io`):
 
 - `assets/js/config.js` → `CONFIG.site.baseUrl`
-- `index.html` → `<link rel="canonical">`, `og:url`, `og:image`, `twitter:image`
+- `index.html` → canonical link, `og:url`, `og:image`, `twitter:image`
 - `sitemap.xml` → `<loc>`
 - `robots.txt` → `Sitemap:`
-- Add a `CNAME` file at the repo root with your domain.
+- Add a `CNAME` file at the repo root.
 
-## Editing content
+## Editing my own content
 
-All in `assets/js/config.js` — no HTML/JS knowledge needed for any of these:
+Everything I need to touch lives in `assets/js/config.js`:
 
-- **Bio** (About section copy) → `CONFIG.about` (array of paragraphs, `<strong>` allowed).
-- **Focus areas, socials** → `CONFIG.focusAreas`, `CONFIG.social`.
-- **Timeline** → `CONFIG.timeline`, array of `{ year, title, desc }`. Last entry is marked as current automatically.
-- **Certificates** → `CONFIG.certificates`, array of `{ title, issuer, date, verifyUrl }`. `date` is optional — leave `null` to hide it. Add as many as you want; the grid lays itself out.
-- **Which repos count as "pinned/featured"** → `CONFIG.github.pinnedOrder` (array of repo names, in order).
-- **Repos to hide** (e.g. this profile README repo) → `CONFIG.github.excludeRepos`.
-- **Version number in the footer** → `CONFIG.site.version`.
+- **Bio** → `CONFIG.about`
+- **Timeline** → `CONFIG.timeline`, just `{ year, title, desc }` objects. Last one shows as "current."
+- **Certificates** → `CONFIG.certificates`, `{ title, issuer, date, verifyUrl }`. `date` can be `null` if I don't want to show one. I can add as many as I want, the grid handles it.
+- **Which projects get pinned to the top** → `CONFIG.github.pinnedOrder`
+- **Repos I don't want showing up** (like this one, the portfolio repo itself) → `CONFIG.github.excludeRepos`
+- **Version number in the footer** → `CONFIG.site.version`
 
-Everything else — stars, forks, languages, last commit, README-derived
-descriptions, contribution heatmap, Stack tabs, Activity cards — is fully
-computed from the GitHub API at load time. Push a new repo, tag a topic, or
-change a description on GitHub and the site reflects it automatically.
+I never touch the HTML for any of this.
 
-## Notes on live data sources
+## Why some things are live instead of written by hand
 
-- Repo list, stats, commits, README text, per-repo language bytes → GitHub
-  REST API (unauthenticated, 60 req/hr; responses cached in `sessionStorage`
-  for 10 minutes to stay well under that — so a change on GitHub can take up
-  to ~10 minutes to show in an already-open tab, or is instant in a fresh tab).
-- Contribution heatmap → `github-contributions-api.jogruber.de` (a public,
-  CORS-enabled mirror of GitHub's contribution calendar; GitHub's own REST
-  API doesn't expose this without OAuth).
-- Contact form has no backend (static site) — it validates client-side, then
-  opens the visitor's email client via a `mailto:` link.
-- No third-party image services are used anywhere (the earlier
-  `github-readme-stats.vercel.app` cards were removed — they render as
-  broken images for some visitors, e.g. behind ad-blockers/privacy browsers).
-  Every chart on the page is drawn locally from real API data.
+Stars, forks, languages, last commit, contribution graph, top languages —
+all computed from the GitHub API at load time, cached for 10 minutes in
+`sessionStorage` so I don't blow through the 60 req/hr unauthenticated
+limit. The contribution heatmap comes from
+`github-contributions-api.jogruber.de`, a public mirror of GitHub's own
+contribution calendar (GitHub's official API doesn't expose this without
+OAuth). I deliberately don't use any third-party image services — I tried
+`github-readme-stats.vercel.app` at first and it kept showing up as a
+broken image for people running ad-blockers, so I ripped it out and render
+everything myself from the raw API data instead.
 
-## Running locally
+## Running it locally
 
-Opening `index.html` directly (`file://`) will NOT work — the JS uses ES
-modules, which browsers block from loading over `file://`. Serve it:
+Double-clicking `index.html` doesn't work — the JS is written as ES
+modules, and browsers refuse to load modules over `file://`. I have to
+serve it:
 
 ```
 python -m http.server 8000
 ```
 
-then open `http://localhost:8000`. Or use the Live Server extension in VS Code.
+then open `http://localhost:8000`. Or just use the Live Server extension
+in VS Code.
