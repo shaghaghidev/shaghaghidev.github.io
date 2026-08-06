@@ -51,9 +51,9 @@ export const CONFIG = {
   ],
 
   about: [
-    'I wrote my first lines of code in <strong>2020</strong> — Java, then Python. By 2021 I wasn\u2019t just learning anymore: I\u2019d shipped two real WordPress projects solo, end to end, live on the internet. That\u2019s the pattern that stuck — I don\u2019t stop at "I understand this," I stop at "this works and someone can use it."',
-    'That instinct is what took me into <strong>Computer Engineering</strong> at Mazandaran University of Science and Technology, where <strong>C++</strong> rewired how I think about software — data first, functions honest, nothing trusted until it\u2019s tested. It\u2019s also what pulled me toward <strong>Python</strong> and <strong>AI</strong>: OpenAI, Gemini, Claude — wired into real tools like Telegram bots and CLI utilities, not because AI is trending, but because it deletes hours of repeated work I\u2019d otherwise burn by hand.',
-    'I care enough about doing this right that I went and got <strong>Zero Hack certified</strong> — security isn\u2019t an afterthought in what I build. And this portfolio itself is the clearest proof of how I work: nothing on this page is a static claim. Every stat, every project card, every language bar is pulled live from the GitHub API as you\u2019re reading it. If I say I ship real, working software — this site is the receipt.',
+    'I build small, sharp things instead of big, vague ones. A Telegram bot that saves someone twenty minutes a day beats a framework nobody finishes — that\u2019s basically my whole design philosophy in one sentence.',
+    'I\u2019m the person who reads the error message twice before asking anyone else to look at it, and who\u2019d rather ship something boring and correct than something exciting and half-tested. Automation only counts if it still works when nobody\u2019s watching it run.',
+    'None of that is worth much as a claim, so I didn\u2019t write this page as one. Every number above updates itself straight from GitHub — no editing, no polishing before you look. What you\u2019re seeing right now is what\u2019s actually true today.',
   ],
 
   // Skills are NOT listed here — they're derived live from real GitHub data
