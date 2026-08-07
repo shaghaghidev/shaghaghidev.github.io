@@ -72,14 +72,21 @@ export const CONFIG = {
     { year: 'Now', title: 'Python & AI tooling', desc: 'Specializing in Python, integrating AI providers like OpenAI and Claude into real tools — vibe coding, one build at a time.' },
   ],
 
-  // Add more certificates here any time — each one just needs these four
-  // fields. date is optional (omit or leave null to hide it on the card).
+  // Add more certificates here any time — each one just needs these fields.
+  // date and image are both optional: omit/null date to hide it, omit image
+  // to fall back to the plain icon card.
   certificates: [
     {
       title: 'Zero Hack Certification',
       issuer: 'Maktabkhooneh',
       date: '4/4/2026',
       verifyUrl: 'https://www.maktabkhooneh.org/certificates/MK-YPQOQV/',
+    },
+    {
+      title: 'Python (Basic) Certificate',
+      issuer: 'HackerRank',
+      date: '8/7/2026',
+      verifyUrl: 'https://www.hackerrank.com/certificates/69940804e362',
     },
   ],
 
