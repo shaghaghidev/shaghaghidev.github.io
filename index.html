@@ -1,46 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abolfazl Shaghaghi — Web Designer &amp; Developer</title>
-<meta name="description" content="Abolfazl Shaghaghi — Computer Engineering student focused on Web Design & Development. Building with WordPress, Figma, HTML and CSS, progressing toward JavaScript, PHP and modern web development.">
+<meta name="description" content="Abolfazl Shaghaghi — Computer Engineering student focused on Web Design & Development. Building with WordPress, Figma, HTML and CSS.">
 <link rel="canonical" href="https://shaghaghidev.github.io/">
+<meta name="robots" content="index, follow">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0a0c10">
 
-<!-- Open Graph -->
 <meta property="og:title" content="Abolfazl Shaghaghi — Web Designer & Developer">
 <meta property="og:description" content="Computer Engineering student focused on Web Design & Development. Building with WordPress, Figma, HTML and CSS.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://shaghaghidev.github.io/">
 <meta property="og:image" content="https://shaghaghidev.github.io/assets/icons/social-preview.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="Abolfazl Shaghaghi">
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Abolfazl Shaghaghi — Web Designer & Developer">
 <meta name="twitter:description" content="Computer Engineering student focused on Web Design & Development.">
 <meta name="twitter:image" content="https://shaghaghidev.github.io/assets/icons/social-preview.png">
 
-<meta name="theme-color" content="#0a0c10">
-<meta name="color-scheme" content="dark light">
-<meta name="robots" content="index, follow">
-
-<!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
-<link rel="manifest" href="assets/icons/site.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 
-<!-- Schema.org: Person -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,261 +37,237 @@
   "image": "https://avatars.githubusercontent.com/u/250031984?v=4",
   "jobTitle": "Web Designer & Developer",
   "email": "mailto:artashaghaghi@gmail.com",
-  "sameAs": [
-    "https://github.com/shaghaghidev",
-    "https://instagram.com/shaghaghipv"
-  ],
-  "knowsAbout": ["Web Design", "WordPress", "Figma", "HTML", "CSS", "UI Design", "Responsive Design"]
+  "sameAs": ["https://github.com/shaghaghidev", "https://instagram.com/shaghaghipv"],
+  "knowsAbout": ["Web Design", "WordPress", "Figma", "HTML", "CSS"]
 }
 </script>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to content</a>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<div id="gutter" aria-hidden="true"></div>
+<header id="siteHeader">
+  <div class="wrap">
+    <a class="brand" href="#hero">Abolfazl Shaghaghi</a>
 
-<main id="main-content">
-  <header>
-    <div class="wrap">
-      <a class="brand" href="#hero" aria-label="Abolfazl Shaghaghi — home">
-        <img src="https://avatars.githubusercontent.com/u/250031984?v=4" width="28" height="28" alt="" loading="lazy">
-        Abolfazl Shaghaghi
-        <span class="dot" aria-hidden="true"></span>
-      </a>
-      <nav class="links" aria-label="Primary">
-        <a class="nav-anchor" href="#about">about</a>
-        <a class="nav-anchor" href="#focus">focus</a>
-        <a class="nav-anchor" href="#roadmap">roadmap</a>
-        <a class="nav-anchor" href="#stack">stack</a>
-        <a class="nav-anchor" href="#projects">projects</a>
-        <a class="nav-anchor" href="#activity">activity</a>
-        <a class="nav-anchor" href="#contact">contact</a>
-      </nav>
-      <div class="nav-tools">
-        <button class="kbd-hint" id="cmdk-trigger" type="button" aria-haspopup="dialog" aria-controls="cmdk-overlay">
-          <span>⌘K</span>
-        </button>
-        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle light and dark theme" aria-pressed="false">
-          <svg id="theme-icon-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          <svg id="theme-icon-light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        </button>
-      </div>
+    <nav class="nav" id="siteNav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle light and dark theme" aria-pressed="false">
+        <svg id="iconDark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg id="iconLight" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button id="menuBtn" class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </div>
-    <div id="progress"></div>
-  </header>
+  </div>
+</header>
+
+<main id="main">
 
   <section id="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Abolfazl Shaghaghi</p>
+        <h1>Web Designer<br>&amp; Developer</h1>
+        <p class="lede">Computer Engineering student focused on Web Design &amp; Development, currently building with WordPress, Figma, HTML and CSS.</p>
+
+        <div class="focus-line">
+          <span><b>Currently</b> WordPress · Figma · HTML · CSS</span>
+          <span><b>Next</b> JavaScript · PHP · WordPress Development</span>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#work">View My Work</a>
+          <a class="btn btn-ghost" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 380 340" width="100%" height="100%">
+          <rect x="10" y="10" width="360" height="320" rx="14" fill="var(--surface)" stroke="var(--border-strong)"/>
+          <circle cx="34" cy="34" r="4.5" fill="var(--danger)" opacity=".7"/>
+          <circle cx="50" cy="34" r="4.5" fill="var(--accent)" opacity=".7"/>
+          <circle cx="66" cy="34" r="4.5" fill="var(--accent-2)" opacity=".7"/>
+          <line x1="10" y1="52" x2="370" y2="52" stroke="var(--border)"/>
+
+          <rect x="34" y="76" width="150" height="14" rx="3" fill="var(--text-faint)" opacity=".5"/>
+          <rect x="34" y="100" width="230" height="9" rx="2" fill="var(--text-faint)" opacity=".3"/>
+          <rect x="34" y="116" width="190" height="9" rx="2" fill="var(--text-faint)" opacity=".3"/>
+          <rect x="34" y="138" width="88" height="26" rx="6" fill="var(--accent)"/>
+
+          <rect x="34" y="188" width="94" height="70" rx="8" fill="var(--bg-soft)" stroke="var(--border-strong)"/>
+          <rect x="140" y="188" width="94" height="70" rx="8" fill="var(--bg-soft)" stroke="var(--border-strong)"/>
+          <rect x="246" y="188" width="94" height="70" rx="8" fill="var(--bg-soft)" stroke="var(--border-strong)" stroke-dasharray="4 4" stroke-width="1.5"/>
+
+          <rect x="242" y="184" width="102" height="78" rx="10" fill="none" stroke="var(--accent-2)" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <circle cx="344" cy="262" r="3" fill="var(--accent-2)"/>
+
+          <g transform="translate(34,282)">
+            <circle r="8" fill="none" stroke="var(--text-faint)" stroke-width="1.5"/>
+            <circle r="8" cx="18" fill="none" stroke="var(--text-faint)" stroke-width="1.5"/>
+            <circle r="8" cx="36" fill="var(--accent)"/>
+            <text x="52" y="4" font-family="JetBrains Mono" font-size="10" fill="var(--text-faint)">Aa</text>
+          </g>
+
+          <g class="cursor" transform="translate(300,120)">
+            <path d="M0 0 L0 16 L4.5 12.5 L7.5 18.5 L10 17.3 L7 11.3 L12 11 Z" fill="var(--accent-2)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
     <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <p class="kicker">$ whoami <span>&nbsp;→</span></p>
-          <h1 class="name">Abolfazl <span class="surname">Shaghaghi</span></h1>
-          <p class="role-line">Computer Engineering student focused on Web Design &amp; Development. Currently building with WordPress, Figma, HTML and CSS, while progressing toward JavaScript, PHP and modern web development.</p>
-          <div class="typed-wrap"><span id="typed"></span><span class="caret" aria-hidden="true"></span></div>
-          <div class="cta-row">
-            <a class="btn primary" href="https://github.com/shaghaghidev" target="_blank" rel="noopener">
-              View GitHub
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg>
-            </a>
-            <a class="btn ghost" href="#projects">
-              See projects
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-            </a>
-            <a class="btn ghost" href="mailto:Artashaghaghi@gmail.com">
-              Email me
-            </a>
+      <p class="section-kicker">01 — About</p>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>I'm a Computer Engineering student with a growing focus on web design and development. Right now that means building real pages in <b>WordPress</b>, designing interfaces in <b>Figma</b>, and writing my own <b>HTML &amp; CSS</b> by hand.</p>
+          <p>I'm moving toward JavaScript and PHP next — the goal isn't to collect technologies, it's to build websites people can actually use.</p>
+
+          <div class="how-i-build">
+            <p class="how-label">How I Build</p>
+            <p>I use AI-assisted development and vibe coding as part of my workflow — turning ideas into working prototypes quickly, while continuously strengthening my understanding of the underlying code and technologies. It's a tool in my process, not a replacement for learning it.</p>
           </div>
-          <div class="status-line">
-            <span id="now-status">Computer Engineering student. Currently building with WordPress, Figma, HTML &amp; CSS.</span>
+        </div>
+
+        <div class="focus-cards">
+          <div class="focus-card">
+            <p class="fc-label">Currently Working With</p>
+            <ul>
+              <li>WordPress</li>
+              <li>Figma</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
           </div>
-
-          <div class="stat-strip" id="hero-stats" aria-label="Live GitHub statistics">
-            <div class="stat-cell"><div class="stat-num loading" data-stat="repos">—</div><div class="stat-label">Repos</div></div>
-            <div class="stat-cell"><div class="stat-num loading" data-stat="stars">—</div><div class="stat-label">Stars</div></div>
-            <div class="stat-cell"><div class="stat-num loading" data-stat="followers">—</div><div class="stat-label">Followers</div></div>
-            <div class="stat-cell"><div class="stat-num loading" data-stat="commits">—</div><div class="stat-label">Contributions</div></div>
+          <div class="focus-card muted">
+            <p class="fc-label">Learning Next</p>
+            <ul>
+              <li>JavaScript</li>
+              <li>PHP</li>
+              <li>WordPress Development</li>
+            </ul>
           </div>
         </div>
-
-        <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="40" width="380" height="300" rx="14" fill="var(--surface)" stroke="var(--border-strong)"/>
-            <circle cx="46" cy="66" r="5" fill="var(--danger)" opacity=".7"/>
-            <circle cx="64" cy="66" r="5" fill="var(--accent)" opacity=".7"/>
-            <circle cx="82" cy="66" r="5" fill="var(--accent-2)" opacity=".7"/>
-            <line x1="20" y1="86" x2="400" y2="86" stroke="var(--border)"/>
-            <g font-family="monospace" font-size="13" fill="var(--text-faint)">
-              <text x="44" y="118"><tspan fill="#c792ea">import</tspan> { Layout } <tspan fill="#c792ea">from</tspan> 'design'</text>
-              <text x="44" y="144"><tspan fill="#c792ea">import</tspan> wordpress, figma</text>
-              <text x="44" y="182" fill="var(--text-dim)"><tspan fill="#c792ea">function</tspan> <tspan fill="var(--accent)">build</tspan>(page) {</text>
-              <text x="64" y="208">page.<tspan fill="var(--accent-2)">design</tspan>(figma)</text>
-              <text x="64" y="234">page.<tspan fill="var(--accent-2)">style</tspan>(css)</text>
-              <text x="64" y="260">page.<tspan fill="var(--accent-2)">build</tspan>(wordpress)</text>
-              <text x="64" y="286"><tspan fill="#c792ea">return</tspan> <tspan fill="var(--accent)">page</tspan>.ship()</text>
-              <text x="44" y="318" fill="var(--text-faint)"># status: learning JavaScript next</text>
-            </g>
-            <circle cx="200" cy="200" r="185" fill="none" stroke="var(--accent-soft)" stroke-width="1.5" stroke-dasharray="2 6"/>
-          </svg>
-        </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="reveal">
+  <section id="work">
     <div class="wrap">
-      <p class="eyebrow">## about</p>
-      <div id="about-copy"></div>
-    </div>
-  </section>
+      <p class="section-kicker">02 — Selected Work</p>
+      <h2 class="section-title">A few real projects, not the whole repo list.</h2>
 
-  <section id="focus" class="reveal">
-    <div class="wrap">
-      <p class="eyebrow">## current focus</p>
-      <div class="focus-grid" id="focus-grid"></div>
-    </div>
-  </section>
+      <div class="work-list">
 
-  <section id="stack" class="reveal">
-    <div class="wrap">
-      <p class="eyebrow">## stack</p>
-      <p style="font-family:var(--mono); font-size:11.5px; color:var(--text-faint); margin:-10px 0 24px;">What I'm actually working with day to day, and what's next on the list — kept clearly separate.</p>
-      <div class="stack-columns" id="stack-columns"></div>
-    </div>
-  </section>
-
-  <section id="activity" class="reveal">
-    <div class="wrap">
-      <p class="eyebrow">## github activity</p>
-
-      <div class="activity-metrics" id="activity-metrics" aria-label="Contribution summary">
-        <div class="stat-cell"><div class="stat-num loading" data-stat="total-contrib">—</div><div class="stat-label">Total contributions</div></div>
-        <div class="stat-cell"><div class="stat-num loading" data-stat="streak">—</div><div class="stat-label">Current streak</div></div>
-        <div class="stat-cell"><div class="stat-num loading" data-stat="longest-streak">—</div><div class="stat-label">Longest streak</div></div>
-        <div class="stat-cell"><div class="stat-num loading" data-stat="last-commit">—</div><div class="stat-label">Last commit</div></div>
-      </div>
-
-      <div class="activity-grid">
-        <div class="activity-card" id="card-top-languages">
-          <p class="empty-state">Computing top languages…</p>
-        </div>
-        <div class="activity-card" id="card-repo-summary">
-          <p class="empty-state">Loading repository summary…</p>
-        </div>
-      </div>
-
-      <div class="heatmap-wrap">
-        <div id="heatmap-container" role="img" aria-label="GitHub contribution heatmap for the past year">
-          <p class="empty-state" id="heatmap-loading">Loading contribution history…</p>
-        </div>
-        <div class="heatmap-legend" aria-hidden="true">
-          <span>Less</span>
-          <span class="sw" style="background:var(--border)"></span>
-          <span class="sw" style="background:var(--accent-2-soft)"></span>
-          <span class="sw" style="background:var(--accent-2)"></span>
-          <span class="sw" style="background:var(--accent)"></span>
-          <span>More</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="now" class="reveal">
-    <div class="wrap">
-      <p class="eyebrow">## what i'm working on</p>
-      <div class="focus-grid cols-3" id="working-on-grid"></div>
-    </div>
-  </section>
-
-  <section id="roadmap" class="reveal">
-    <div class="wrap">
-      <p class="eyebrow">## roadmap</p>
-      <div class="timeline" id="timeline-list"></div>
-    </div>
-  </section>
-
-  <section id="certificates" class="reveal">
-    <div class="wrap">
-      <p class="eyebrow">## certificates</p>
-      <div class="cert-grid" id="cert-list"></div>
-    </div>
-  </section>
-
-  <section id="projects" class="reveal">
-    <div class="wrap">
-      <p class="eyebrow">## projects</p>
-
-      <div class="proj-controls">
-        <div class="search-row">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-          <input type="search" id="proj-search" placeholder="Search projects by name or description…" aria-label="Search projects">
-        </div>
-        <div class="filter-row" id="filter-row" role="group" aria-label="Filter projects by topic"></div>
-      </div>
-      <p class="proj-count" id="proj-count"></p>
-
-      <div class="proj-list" id="proj-list">
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="reveal">
-    <div class="wrap">
-      <p class="eyebrow">## contact</p>
-      <div class="contact-grid">
-        <form id="contact-form" novalidate>
-          <div class="field" id="field-name">
-            <label for="cf-name">Name</label>
-            <input type="text" id="cf-name" name="name" autocomplete="name" required>
-            <p class="field-error">Please enter your name.</p>
+        <article class="work-item">
+          <div class="work-head">
+            <h3>AbolfazlMind Bot</h3>
+            <span class="status status-active">In Progress</span>
           </div>
-          <div class="field" id="field-email">
-            <label for="cf-email">Email</label>
-            <input type="email" id="cf-email" name="email" autocomplete="email" required>
-            <p class="field-error">Please enter a valid email address.</p>
+          <p class="work-desc">An AI-powered Telegram bot with a pluggable multi-provider chat layer (Gemini, GPT, Claude) and a live GitHub-connected profile.</p>
+          <div class="work-meta">
+            <span class="meta-label">Type</span><span>Personal</span>
+            <span class="meta-label">Tech</span><span>Python · Docker</span>
+            <span class="meta-label">Role</span><span>Concept · Direction · AI-Assisted Development</span>
           </div>
-          <div class="field" id="field-message">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" rows="5" required></textarea>
-            <p class="field-error">Please write a short message (at least 10 characters).</p>
-          </div>
-          <button class="btn primary" type="submit">
-            Send message
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-          </button>
-          <p class="form-status" id="form-status" role="status"></p>
-        </form>
+          <a class="work-link" href="https://github.com/shaghaghidev/AbolfazlMind_Bot" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
 
-        <div>
-          <div class="contact-links" id="contact-links"></div>
-        </div>
+        <article class="work-item">
+          <div class="work-head">
+            <h3>Telegram Privacy Checker</h3>
+            <span class="status">Completed</span>
+          </div>
+          <p class="work-desc">A read-only self-audit tool for Telegram accounts — checks privacy settings, active sessions, and 2FA status, with weekly reports.</p>
+          <div class="work-meta">
+            <span class="meta-label">Type</span><span>Personal</span>
+            <span class="meta-label">Tech</span><span>Python</span>
+            <span class="meta-label">Role</span><span>Concept · Direction · AI-Assisted Development</span>
+          </div>
+          <a class="work-link" href="https://github.com/shaghaghidev/telegram-privacy-checker" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <article class="work-item">
+          <div class="work-head">
+            <h3>Store Management System</h3>
+            <span class="status">Completed</span>
+          </div>
+          <p class="work-desc">A console inventory system written in C++ for a Fundamentals of Programming course — arrays, structs, and file handling, built by hand.</p>
+          <div class="work-meta">
+            <span class="meta-label">Type</span><span>University</span>
+            <span class="meta-label">Tech</span><span>C++</span>
+            <span class="meta-label">Role</span><span>Development</span>
+          </div>
+          <a class="work-link" href="https://github.com/shaghaghidev/store-management-cpp" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <footer>
+  <section id="journey">
     <div class="wrap">
-      <span>© <span id="year"></span> Abolfazl Shaghaghi · Web Design &amp; Development · Computer Engineering Student</span>
-      <span class="footer-links" id="footer-links"></span>
-      <span><span id="site-version"></span> · updated <span id="last-updated"></span></span>
+      <p class="section-kicker">03 — My Path</p>
+      <h2 class="section-title">Where I am, and where I'm headed.</h2>
+
+      <ol class="path">
+        <li class="path-step current">
+          <span class="step-no">01</span>
+          <div><p class="step-label">Now</p><p class="step-text">WordPress · Figma · HTML · CSS</p></div>
+        </li>
+        <li class="path-step">
+          <span class="step-no">02</span>
+          <div><p class="step-label">Next</p><p class="step-text">JavaScript</p></div>
+        </li>
+        <li class="path-step future">
+          <span class="step-no">03</span>
+          <div><p class="step-label">Building Deeper</p><p class="step-text">PHP · WordPress Development · APIs · Databases</p></div>
+        </li>
+        <li class="path-step future">
+          <span class="step-no">04</span>
+          <div><p class="step-label">Later</p><p class="step-text">React · Next.js · Modern Web Development</p></div>
+        </li>
+      </ol>
     </div>
-  </footer>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="section-kicker">04 — Contact</p>
+        <h2 class="section-title">Have a website idea or project in mind?</h2>
+        <div class="contact-links">
+          <a href="mailto:artashaghaghi@gmail.com">artashaghaghi@gmail.com</a>
+          <a href="https://github.com/shaghaghidev" target="_blank" rel="noopener">github.com/shaghaghidev</a>
+          <a href="https://instagram.com/shaghaghipv" target="_blank" rel="noopener">@shaghaghipv</a>
+        </div>
+      </div>
+
+      <div class="github-mini">
+        <img src="https://raw.githubusercontent.com/shaghaghidev/shaghaghidev/output/snake.svg" alt="GitHub contribution activity" loading="lazy">
+        <a href="https://github.com/shaghaghidev" target="_blank" rel="noopener">See my activity on GitHub →</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<!-- Command palette -->
-<div id="cmdk-overlay" role="presentation">
-  <div id="cmdk" role="dialog" aria-modal="true" aria-label="Command palette">
-    <div id="cmdk-input-row">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-      <input id="cmdk-input" type="text" placeholder="Jump to a section or project…" autocomplete="off">
-      <span id="cmdk-esc">ESC</span>
-    </div>
-    <div id="cmdk-list"></div>
+<footer>
+  <div class="wrap">
+    <span>Abolfazl Shaghaghi · Web Design &amp; Development · Computer Engineering Student</span>
+    <span>© <span id="year"></span></span>
   </div>
-</div>
+</footer>
 
-<script type="module" src="assets/js/app.js"></script>
+<script src="assets/js/app.js" defer></script>
 </body>
 </html>
