@@ -1,99 +1,95 @@
-// ============================================================
-// SITE CONFIG — single source of truth for constant data.
-// Project data, stats, activity, and commit info are NEVER
-// hardcoded here — they're fetched live from the GitHub API
-// by github-api.js. This file only holds identity, copy,
-// and editorial choices (pin order, skill taxonomy, timeline).
-// ============================================================
-
 export const CONFIG = {
-  github: {
-    username: 'shaghaghidev',
-    // Repos to exclude from the project grid (profile README repo, etc.)
-    excludeRepos: ['shaghaghidev'],
-    // Repos pinned to the top of the list, in order. Anything not
-    // listed here still shows, sorted by last push, after these.
-    pinnedOrder: ['AbolfazlMind_Bot', 'telegram-privacy-checker', 'store-management-cpp'],
-  },
-
   site: {
-    baseUrl: 'https://shaghaghidev.github.io',
-    version: 'v2.1.0',
+    version: 'v1.1.0',
   },
 
   person: {
-    firstName: 'Abolfazl',
-    lastName: 'Shaghaghi',
-    role: 'Python Tool Builder',
-    tagline: 'Python tool builder & automation engineer. I turn repetitive work and half-formed ideas into software that actually gets used.',
-    email: 'Artashaghaghi@gmail.com',
-    location: 'Iran',
-    avatar: 'https://avatars.githubusercontent.com/u/250031984?v=4',
+    email: 'artashaghaghi@gmail.com',
     typedLines: [
-      'I turn ideas into working software',
-      'I build Python tools people actually use',
-      'I design AI systems that solve real problems',
-      'I automate everything that can be automated',
+      'Building with WordPress & Figma',
+      'Learning JavaScript — PHP is next',
+      'Computer Engineering student',
+      'Design → Build → Ship',
     ],
   },
 
-  social: [
-    { label: 'GitHub', url: 'https://github.com/shaghaghidev', icon: 'github' },
-    { label: 'Email', url: 'mailto:Artashaghaghi@gmail.com', icon: 'mail' },
-    { label: 'Instagram', url: 'https://instagram.com/shaghaghipv', icon: 'instagram' },
-  ],
-
-  focusAreas: [
-    { icon: '01', title: 'Python CLI Tools', desc: 'Scripts & utilities' },
-    { icon: '02', title: 'AI Automation', desc: 'LLM-powered workflows' },
-    { icon: '03', title: 'Telegram Utilities', desc: 'Bots that do real work' },
-    { icon: '04', title: 'Productivity Tools', desc: 'Less repetition, more output' },
-  ],
-
+  // Rendered as raw paragraphs in #about — inline HTML (e.g. <strong>) is fine.
   about: [
-    'I build small, sharp things instead of big, vague ones. A Telegram bot that saves someone twenty minutes a day beats a framework nobody finishes — that\u2019s basically my whole design philosophy in one sentence.',
-    'I\u2019m the person who reads the error message twice before asking anyone else to look at it, and who\u2019d rather ship something boring and correct than something exciting and half-tested. Automation only counts if it still works when nobody\u2019s watching it run.',
-    'None of that is worth much as a claim, so I didn\u2019t write this page as one. Every number above updates itself straight from GitHub — no editing, no polishing before you look. What you\u2019re seeing right now is what\u2019s actually true today.',
+    "I'm a Computer Engineering student, and right now my focus is <strong>Web Design &amp; Development</strong>.",
+    "Day to day I'm working with <strong>WordPress</strong>, <strong>Figma</strong>, and <strong>HTML/CSS</strong> — building real pages, laying out interfaces, and getting comfortable with responsive design.",
+    "Next on my list: <strong>JavaScript</strong>, then <strong>PHP</strong> and proper WordPress development — followed by APIs, databases, and eventually React/Next.js. I'm not there yet, and this site doesn't pretend otherwise.",
   ],
 
-  // Skills are NOT listed here — they're derived live from real GitHub data
-  // (language bytes per repo, repo topics) in app.js, so they can never
-  // drift from what's actually true on GitHub.
+  // "Current Focus" — only things actually being worked on right now.
+  focusAreas: [
+    { icon: '01', title: 'Web Design', desc: 'Planning layouts and interfaces before writing any code.' },
+    { icon: '02', title: 'WordPress', desc: 'Building and customizing real sites, page by page.' },
+    { icon: '03', title: 'UI Design', desc: 'Using Figma to design interfaces before building them.' },
+    { icon: '04', title: 'HTML & CSS', desc: 'Hand-coding layouts and responsive pages from scratch.' },
+  ],
 
-  // Timeline IS authored here rather than inferred from repo creation dates,
-  // because real history includes things that never touched GitHub (early
-  // Java/WordPress years, university acceptance, etc.).
+  // "What I'm Working On" — static and honest, not tied to whatever
+  // repo GitHub happens to show as most recently pushed.
+  workingOn: {
+    current: ['WordPress', 'Figma', 'HTML/CSS'],
+    learning: 'Web Design & Responsive UI',
+    next: ['JavaScript', 'PHP', 'WordPress Development'],
+  },
+
+  // Stack — kept in two clearly separate groups on purpose. Nothing in
+  // "next" has actually been learned yet, so it never renders like a
+  // current skill (see .stack-col.next in style.css).
+  stack: {
+    current: ['WordPress', 'Elementor', 'Figma', 'HTML', 'CSS', 'Git', 'GitHub'],
+    next: ['JavaScript', 'PHP', 'MySQL', 'REST APIs', 'React', 'Next.js'],
+  },
+
+  // Roadmap — status is one of 'done' | 'current' | 'next'.
+  // 'next' items are visually de-emphasized in style.css (.tl-item.next).
   timeline: [
-    { year: '2020', title: 'Started programming', desc: 'First lines of code in Java, then moved to Python — arrays, variables, and functions.' },
-    { year: '2021', title: 'Shipped my first sites', desc: 'Got hooked on WordPress and built two real projects solo, end to end: learnafzar.ir and moviehub.ir.' },
-    { year: '2022', title: 'Moved to frontend', desc: 'Shifted focus toward frontend development.' },
-    { year: '2023', title: 'HTML, CSS & a bit of SEO', desc: 'Sharpened HTML/CSS fundamentals and picked up the basics of SEO.' },
-    { year: '2026', title: 'Computer Engineering', desc: 'Accepted into Mazandaran University of Science and Technology and learned C++ — built a Store Management System as my final term project.' },
-    { year: 'Now', title: 'Python & AI tooling', desc: 'Specializing in Python, integrating AI providers like OpenAI and Claude into real tools — vibe coding, one build at a time.' },
+    { year: '—', title: 'Programming Background', desc: 'University coursework and personal projects in C++ — where I first learned to think in code.', status: 'done' },
+    { year: '01', title: 'Web Design & Development', desc: 'Started focusing seriously on web design and development.', status: 'current' },
+    { year: '02', title: 'WordPress + Figma', desc: 'Building sites in WordPress and designing interfaces in Figma.', status: 'current' },
+    { year: '03', title: 'JavaScript', desc: 'Next step: learning JavaScript to bring interfaces to life.', status: 'next' },
+    { year: '04', title: 'PHP + WordPress Development', desc: 'After that: PHP, and proper WordPress theme/plugin development.', status: 'next' },
+    { year: '05', title: 'React + Next.js', desc: 'Longer term: modern front-end frameworks and full-stack web development.', status: 'next' },
   ],
 
-  // Add more certificates here any time — each one just needs these fields.
-  // date and image are both optional: omit/null date to hide it, omit image
-  // to fall back to the plain icon card.
-  certificates: [
-    {
-      title: 'Zero Hack Certification',
-      issuer: 'Maktabkhooneh',
-      date: '4/4/2026',
-      verifyUrl: 'https://www.maktabkhooneh.org/certificates/MK-YPQOQV/',
-    },
-    {
-      title: 'Python (Basic) Certificate',
-      issuer: 'HackerRank',
-      date: '8/7/2026',
-      verifyUrl: 'https://www.hackerrank.com/certificates/69940804e362',
-    },
+  // Real certificates only. Leave empty rather than invent one — the UI
+  // already handles an empty list gracefully. Add entries like:
+  // { title: '...', issuer: '...', date: '2026', verifyUrl: '...' }
+  // and mark unfinished courses with date: 'In Progress'.
+  certificates: [],
+
+  social: [
+    { url: 'https://github.com/shaghaghidev', label: 'GitHub', icon: 'github' },
+    { url: 'mailto:artashaghaghi@gmail.com', label: 'Email', icon: 'mail' },
+    { url: 'https://instagram.com/shaghaghipv', label: 'Instagram', icon: 'instagram' },
   ],
 
-  // Topic → filter label. Filters are derived live from each repo's GitHub topics
-  // plus its primary language, so this is just how raw topic strings are displayed.
+  github: {
+    username: 'shaghaghidev',
+    // The profile-README repo itself isn't a project — keep it out of stats/listing.
+    excludeRepos: ['shaghaghidev'],
+    // Shown first, in this order, labeled FEATURED.
+    pinnedOrder: ['AbolfazlMind_Bot', 'telegram-privacy-checker', 'store-management-cpp'],
+  },
+
+  // Honest per-project attribution: what kind of project it is, and how
+  // much of it is actually mine — shown as extra pills on each card.
+  projectMeta: {
+    AbolfazlMind_Bot: { type: 'Personal', role: 'Development & Direction', status: 'In Progress' },
+    'telegram-privacy-checker': { type: 'Personal', role: 'Development & Direction', status: 'Completed' },
+    'store-management-cpp': { type: 'University', role: 'Development', status: 'Completed' },
+  },
+
   filterLabels: {
-    python: 'Python', ai: 'AI', automation: 'Automation', cli: 'CLI',
-    api: 'API', telegram: 'Telegram', bot: 'Bot', 'machine-learning': 'ML',
+    python: 'Python',
+    'c++': 'C++',
+    html: 'HTML',
+    css: 'CSS',
+    wordpress: 'WordPress',
+    figma: 'Figma',
+    javascript: 'JavaScript',
   },
 };

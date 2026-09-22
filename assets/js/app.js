@@ -71,12 +71,49 @@ function renderTyped() {
 
 function renderAbout() {
   $('#about-copy').innerHTML = CONFIG.about.map((p) => `<p>${p}</p>`).join('');
+}
+
+function renderFocus() {
   $('#focus-grid').innerHTML = CONFIG.focusAreas.map((f) => `
     <div class="focus-cell">
       <div class="icon">${f.icon}</div>
       <h4>${escapeHtml(f.title)}</h4>
       <p>${escapeHtml(f.desc)}</p>
     </div>`).join('');
+}
+
+// "What I'm Working On" — a static, honest status (Current / Learning /
+// Next), not driven by whatever repo GitHub happens to show as last-pushed.
+function renderWorkingOn() {
+  const w = CONFIG.workingOn;
+  const cells = [
+    { icon: 'Current', title: w.current.join(' · '), desc: 'Actively building with these day to day.' },
+    { icon: 'Learning', title: w.learning, desc: 'Deepening this through real practice.' },
+    { icon: 'Next', title: w.next.join(' → '), desc: 'The next steps on the roadmap.' },
+  ];
+  $('#working-on-grid').innerHTML = cells.map((c) => `
+    <div class="focus-cell">
+      <div class="icon">${escapeHtml(c.icon)}</div>
+      <h4>${escapeHtml(c.title)}</h4>
+      <p>${escapeHtml(c.desc)}</p>
+    </div>`).join('');
+}
+
+// Stack — a manually curated, honest split between what's actually in use
+// today and what's next, kept visually distinct on purpose (see CSS
+// .stack-col.next). This is separate from the live GitHub language stats,
+// which stay in the Activity section further down.
+function renderStack() {
+  const s = CONFIG.stack;
+  $('#stack-columns').innerHTML = `
+    <div class="stack-col">
+      <h4>Currently Working With</h4>
+      <div class="pill-row">${s.current.map((t) => `<span class="pill">${escapeHtml(t)}</span>`).join('')}</div>
+    </div>
+    <div class="stack-col next">
+      <h4>Learning Next</h4>
+      <div class="pill-row">${s.next.map((t) => `<span class="pill">${escapeHtml(t)}</span>`).join('')}</div>
+    </div>`;
 }
 
 // Deterministic color per language/topic name, so the same name always
@@ -119,11 +156,12 @@ function renderContactLinks() {
       ${icons[s.icon] || ''}
       <span>${escapeHtml(s.label)}</span>
     </a>`).join('') + `
-    <div class="contact-link-row"><span>Status</span><span class="status-avail">● open to Python, AI &amp; automation work</span></div>`;
+    <div class="contact-link-row"><span>Status</span><span class="status-avail">● open to web design &amp; WordPress projects</span></div>`;
 
+  const u = CONFIG.github.username;
   $('#footer-links').innerHTML = `
-    <a href="https://github.com/shaghaghidev" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://github.com/shaghaghidev/shaghaghidev" target="_blank" rel="noopener">Profile README</a>`;
+    <a href="https://github.com/${u}" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/${u}/${u}" target="_blank" rel="noopener">Profile README</a>`;
 }
 
 // ============================================================
@@ -229,11 +267,8 @@ async function loadStack(repos, user) {
   try {
     const langsByRepo = await gh.getAllRepoLanguages(CONFIG.github.username, repos);
     const langTotals = aggregateLanguages(langsByRepo);
-    const topicCounts = aggregateTopics(repos);
-    setupStackTabs(langTotals, topicCounts);
     renderTopLanguagesCard(langTotals);
   } catch {
-    $('#skill-grid').innerHTML = '<p class="error-state">Could not load language data from GitHub right now.</p>';
     $('#card-top-languages').innerHTML = '<h4>Top Languages</h4><p class="error-state">Unavailable right now.</p>';
   }
 }
@@ -250,63 +285,12 @@ function aggregateLanguages(langsByRepo) {
     .slice(0, 8);
 }
 
-function aggregateTopics(repos) {
-  const counts = new Map();
-  repos.forEach((r) => (r.topics || []).forEach((t) => counts.set(t, (counts.get(t) || 0) + 1)));
-  const max = Math.max(...Array.from(counts.values()), 1);
-  return Array.from(counts.entries())
-    .map(([name, count]) => ({ name, count, pct: (count / max) * 100 }))
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 10);
-}
-
-function renderLanguageBars(items) {
-  const grid = $('#skill-grid');
-  if (!items.length) { grid.innerHTML = '<p class="empty-state">No language data available on public repos yet.</p>'; return; }
-  grid.innerHTML = items.map((it) => `
-    <div class="skill-row">
-      <div class="skill-top">
-        <span style="display:flex; align-items:center; gap:7px;"><span style="width:8px; height:8px; border-radius:50%; background:${hashColor(it.name)}; flex-shrink:0;"></span>${escapeHtml(it.name)}</span>
-        <span>${it.pct.toFixed(1)}%</span>
-      </div>
-      <div class="skill-bar"><div class="skill-bar-fill" data-level="${it.pct}"></div></div>
-    </div>`).join('');
-  requestAnimationFrame(() => { $$('.skill-bar-fill', grid).forEach((el) => { el.style.width = el.dataset.level + '%'; }); });
-}
-
-function renderTopicBars(items) {
-  const grid = $('#skill-grid');
-  if (!items.length) { grid.innerHTML = '<p class="empty-state">No topics tagged on repos yet — add topics on GitHub (repo → About → gear icon) to populate this.</p>'; return; }
-  grid.innerHTML = items.map((it) => `
-    <div class="skill-row">
-      <div class="skill-top"><span>#${escapeHtml(it.name)}</span><span>${it.count} repo${it.count === 1 ? '' : 's'}</span></div>
-      <div class="skill-bar"><div class="skill-bar-fill" data-level="${it.pct}"></div></div>
-    </div>`).join('');
-  requestAnimationFrame(() => { $$('.skill-bar-fill', grid).forEach((el) => { el.style.width = el.dataset.level + '%'; }); });
-}
-
-function setupStackTabs(langTotals, topicCounts) {
-  const tabs = $('#skill-tabs');
-  const categories = [
-    { key: 'languages', label: 'Languages', render: () => renderLanguageBars(langTotals) },
-    { key: 'topics', label: 'Topics', render: () => renderTopicBars(topicCounts) },
-  ];
-  tabs.innerHTML = categories.map((c, i) => `<button class="skill-tab${i === 0 ? ' active' : ''}" role="tab" aria-selected="${i === 0}" data-key="${c.key}">${escapeHtml(c.label)}</button>`).join('');
-  categories[0].render();
-  tabs.addEventListener('click', (e) => {
-    const btn = e.target.closest('.skill-tab');
-    if (!btn) return;
-    $$('.skill-tab', tabs).forEach((t) => { t.classList.toggle('active', t === btn); t.setAttribute('aria-selected', String(t === btn)); });
-    categories.find((c) => c.key === btn.dataset.key)?.render();
-  });
-}
-
 function renderTimeline() {
   const list = $('#timeline-list');
   const items = CONFIG.timeline;
-  if (!items.length) { list.innerHTML = '<p class="empty-state">No timeline entries yet.</p>'; return; }
-  list.innerHTML = items.map((t, i) => `
-    <div class="tl-item${i === items.length - 1 ? ' current' : ''}">
+  if (!items.length) { list.innerHTML = '<p class="empty-state">No roadmap entries yet.</p>'; return; }
+  list.innerHTML = items.map((t) => `
+    <div class="tl-item ${escapeHtml(t.status || '')}">
       <div class="tl-year">${escapeHtml(t.year)}</div>
       <h4>${escapeHtml(t.title)}</h4>
       <p>${escapeHtml(t.desc)}</p>
@@ -340,13 +324,12 @@ function renderRepoSummaryCard(repos, user) {
   </div>`;
 }
 
+// "What I'm Working On" is now a static, honest section (see renderWorkingOn)
+// rather than whatever GitHub happens to show as most-recently-pushed — so
+// this only feeds the live "last commit" stat in the Activity section.
 function renderNowWorkingOn(repos) {
   if (!repos.length) return;
   const latest = [...repos].sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))[0];
-  $('#now-path').textContent = `~/projects/${latest.name}`;
-  $('#now-title').innerHTML = `<a href="${latest.html_url}" target="_blank" rel="noopener" style="color:inherit; border-bottom:1px dashed var(--border-strong);">${escapeHtml(latest.name)}</a>`;
-  $('#now-desc').textContent = latest.description || `Last pushed ${timeAgo(latest.pushed_at)}.`;
-  $('#now-status').textContent = `Currently shipping on ${latest.name} — last commit ${timeAgo(latest.pushed_at)}.`;
   setStat('last-commit', timeAgo(latest.pushed_at));
 }
 
@@ -428,6 +411,7 @@ async function buildProjectCard(repo, index) {
   const pills = [repo.language, ...repo.topics.slice(0, 3)].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i);
 
   const homepage = repo.homepage && repo.homepage.trim();
+  const meta = CONFIG.projectMeta[repo.name] || { type: 'Personal', role: 'Development', status: null };
 
   return `
     <article class="proj-card">
@@ -437,6 +421,11 @@ async function buildProjectCard(repo, index) {
         <h3>${escapeHtml(repo.name)}</h3>
         <p>${escapeHtml(description)}</p>
         <div class="pill-row">${pills.map((p) => `<span class="pill">${escapeHtml(p)}</span>`).join('')}</div>
+        <div class="pill-row">
+          <span class="pill meta-pill">${escapeHtml(meta.type)}</span>
+          <span class="pill meta-pill">Role: ${escapeHtml(meta.role)}</span>
+          ${meta.status ? `<span class="pill meta-pill">${escapeHtml(meta.status)}</span>` : ''}
+        </div>
         <div class="proj-meta-row">
           <span title="Stars">★ ${repo.stargazers_count}</span>
           <span title="Forks">⑂ ${repo.forks_count}</span>
@@ -667,6 +656,9 @@ function init() {
   renderIdentity();
   renderTyped();
   renderAbout();
+  renderFocus();
+  renderWorkingOn();
+  renderStack();
   renderTimeline();
   renderCertificates();
   renderContactLinks();
