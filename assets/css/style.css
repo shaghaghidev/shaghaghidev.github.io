@@ -226,6 +226,15 @@ h1.name .surname{color:var(--text-dim); font-weight:500;}
 .focus-cell h4{margin:0 0 6px; font-size:14.5px; font-weight:600; color:var(--text);}
 .focus-cell p{margin:0; font-size:12.5px; color:var(--text-faint); line-height:1.5;}
 @media (max-width:700px){ .focus-grid{grid-template-columns:repeat(2,1fr);} }
+.focus-grid.cols-3{grid-template-columns:repeat(3,1fr);}
+@media (max-width:700px){ .focus-grid.cols-3{grid-template-columns:1fr;} }
+
+.stack-columns{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:8px;}
+.stack-col h4{margin:0 0 14px; font-size:12.5px; font-family:var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--text-faint);}
+.stack-col.next .pill{opacity:.55; border-style:dashed;}
+@media (max-width:640px){ .stack-columns{grid-template-columns:1fr;} }
+
+.meta-pill{color:var(--accent-2); border-color:var(--accent-2-soft);}
 
 /* ---------- stack / skills ---------- */
 .skill-tabs{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 28px;}
@@ -291,6 +300,9 @@ h1.name .surname{color:var(--text-dim); font-weight:500;}
   background:var(--bg); border:2px solid var(--accent-2);
 }
 .tl-item.current::before{background:var(--accent); border-color:var(--accent); box-shadow:0 0 0 4px var(--accent-soft);}
+.tl-item.next{opacity:.6;}
+.tl-item.next::before{border-style:dashed;}
+.tl-item.next h4::after{content:'upcoming'; margin-left:8px; font-family:var(--mono); font-size:10px; font-weight:400; letter-spacing:.06em; text-transform:uppercase; color:var(--text-faint); border:1px solid var(--border-strong); border-radius:100px; padding:2px 7px; vertical-align:middle;}
 .tl-year{font-family:var(--mono); font-size:11.5px; color:var(--accent-2); letter-spacing:.06em; margin-bottom:4px;}
 .tl-item h4{margin:0 0 6px; font-size:15.5px;}
 .tl-item p{margin:0; font-size:13.5px; color:var(--text-dim); max-width:560px;}
