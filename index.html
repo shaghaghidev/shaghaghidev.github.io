@@ -52,6 +52,7 @@
     <nav class="nav" id="siteNav" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#work">Work</a>
+      <a href="#design">Design</a>
       <a href="#journey">Journey</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -88,21 +89,26 @@
         </div>
       </div>
 
-      <div class="hero-photo">
-        <!-- Using the real GitHub avatar as the personal photo. To swap
-             in a higher-resolution local photo later, replace the src
-             below with e.g. "assets/images/profile.jpg" — the fallback
-             keeps the GitHub avatar if that file isn't found. -->
-        <img src="assets/images/profile.jpg"
-             onerror="this.onerror=null; this.src='https://avatars.githubusercontent.com/u/250031984?v=4';"
-             alt="Abolfazl Shaghaghi" width="420" height="420" loading="eager">
+      <div class="hero-photo-wrap">
+        <div class="hero-photo">
+          <!-- Using the real GitHub avatar as the personal photo. To swap
+               in a higher-resolution local photo later, replace the src
+               below with e.g. "assets/images/profile.jpg" — the fallback
+               keeps the GitHub avatar if that file isn't found. -->
+          <img src="assets/images/profile.jpg"
+               onerror="this.onerror=null; this.src='https://avatars.githubusercontent.com/u/250031984?v=4';"
+               alt="Abolfazl Shaghaghi" width="420" height="420" loading="eager">
+          <span class="corner corner-tl" aria-hidden="true"></span>
+          <span class="corner corner-br" aria-hidden="true"></span>
+        </div>
+        <p class="photo-caption">Abolfazl —<br>designing &amp; building.</p>
       </div>
     </div>
   </section>
 
   <section id="about">
     <div class="wrap">
-      <p class="section-kicker">01 — About</p>
+      <h2 class="section-kicker">01 — About</h2>
 
       <div class="about-grid">
         <div class="about-copy">
@@ -141,51 +147,103 @@
   <section id="work">
     <div class="wrap">
       <p class="section-kicker">02 — Selected Work</p>
-      <h2 class="section-title">A few real projects, not the whole repo list.</h2>
+      <h2 class="section-title">Vibe Coding Projects</h2>
+      <p class="section-sub">Built with a vibe coding workflow — ideas turned into working software quickly with AI-assisted development, directed and shaped by me.</p>
 
-      <div class="work-list">
+      <div class="work-grid">
 
-        <article class="work-item">
-          <div class="work-head">
-            <h3>AbolfazlMind Bot</h3>
-            <span class="status status-active">In Progress</span>
+        <article class="work-card">
+          <div class="wc-cover wc-cover-1" aria-hidden="true"><span>AB</span></div>
+          <div class="wc-body">
+            <div class="wc-head">
+              <h3>AbolfazlMind Bot</h3>
+              <span class="status status-active">In Progress</span>
+            </div>
+            <p>AI-powered Telegram bot with a pluggable multi-provider chat layer and a live GitHub-connected profile.</p>
+            <div class="tag-row">
+              <span class="tag">Python</span><span class="tag">Docker</span>
+            </div>
+            <p class="wc-role">Concept · Direction · AI-Assisted Development</p>
+            <a class="work-link" href="https://github.com/shaghaghidev/AbolfazlMind_Bot" target="_blank" rel="noopener">View on GitHub ↗</a>
           </div>
-          <p class="work-desc">An AI-powered Telegram bot with a pluggable multi-provider chat layer (Gemini, GPT, Claude) and a live GitHub-connected profile.</p>
-          <div class="work-meta">
-            <span class="meta-label">Type</span><span>Personal</span>
-            <span class="meta-label">Tech</span><span>Python · Docker</span>
-            <span class="meta-label">Role</span><span>Concept · Direction · AI-Assisted Development</span>
-          </div>
-          <a class="work-link" href="https://github.com/shaghaghidev/AbolfazlMind_Bot" target="_blank" rel="noopener">View on GitHub ↗</a>
         </article>
 
-        <article class="work-item">
-          <div class="work-head">
-            <h3>Telegram Privacy Checker</h3>
-            <span class="status">Completed</span>
+        <article class="work-card">
+          <div class="wc-cover wc-cover-2" aria-hidden="true"><span>TP</span></div>
+          <div class="wc-body">
+            <div class="wc-head">
+              <h3>Telegram Privacy Checker</h3>
+              <span class="status">Completed</span>
+            </div>
+            <p>A read-only self-audit tool for Telegram — privacy score, active sessions, and 2FA status, with weekly reports.</p>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+            </div>
+            <p class="wc-role">Concept · Direction · AI-Assisted Development</p>
+            <a class="work-link" href="https://github.com/shaghaghidev/telegram-privacy-checker" target="_blank" rel="noopener">View on GitHub ↗</a>
           </div>
-          <p class="work-desc">A read-only self-audit tool for Telegram accounts — checks privacy settings, active sessions, and 2FA status, with weekly reports.</p>
-          <div class="work-meta">
-            <span class="meta-label">Type</span><span>Personal</span>
-            <span class="meta-label">Tech</span><span>Python</span>
-            <span class="meta-label">Role</span><span>Concept · Direction · AI-Assisted Development</span>
-          </div>
-          <a class="work-link" href="https://github.com/shaghaghidev/telegram-privacy-checker" target="_blank" rel="noopener">View on GitHub ↗</a>
         </article>
 
-        <article class="work-item">
-          <div class="work-head">
-            <h3>Store Management System</h3>
-            <span class="status">Completed</span>
+        <article class="work-card">
+          <div class="wc-cover wc-cover-3" aria-hidden="true"><span>SM</span></div>
+          <div class="wc-body">
+            <div class="wc-head">
+              <h3>Store Management System</h3>
+              <span class="status">Completed</span>
+            </div>
+            <p>A console inventory system built for a Fundamentals of Programming course — arrays, structs, file handling, built by hand.</p>
+            <div class="tag-row">
+              <span class="tag">C++</span>
+            </div>
+            <p class="wc-role">Development</p>
+            <a class="work-link" href="https://github.com/shaghaghidev/store-management-cpp" target="_blank" rel="noopener">View on GitHub ↗</a>
           </div>
-          <p class="work-desc">A console inventory system written in C++ for a Fundamentals of Programming course — arrays, structs, and file handling, built by hand.</p>
-          <div class="work-meta">
-            <span class="meta-label">Type</span><span>University</span>
-            <span class="meta-label">Tech</span><span>C++</span>
-            <span class="meta-label">Role</span><span>Development</span>
-          </div>
-          <a class="work-link" href="https://github.com/shaghaghidev/store-management-cpp" target="_blank" rel="noopener">View on GitHub ↗</a>
         </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="design">
+    <div class="wrap">
+      <p class="section-kicker">03 — Web Design Showcase</p>
+      <h2 class="section-title">Websites I'm designing and building.</h2>
+      <p class="section-sub">A curated collection of websites and interfaces I'm designing and building. This is where real WordPress and Figma work will live as I ship it.</p>
+
+      <div class="showcase-grid">
+
+        <figure class="showcase-card is-empty">
+          <div class="showcase-thumb">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <span>Reserved for an upcoming project</span>
+          </div>
+          <figcaption>
+            <p class="showcase-name">Next Web Design Project</p>
+            <p class="showcase-meta">Type — TBD · Tool — Figma / WordPress</p>
+          </figcaption>
+        </figure>
+
+        <figure class="showcase-card is-empty">
+          <div class="showcase-thumb">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <span>Reserved for an upcoming project</span>
+          </div>
+          <figcaption>
+            <p class="showcase-name">Next Web Design Project</p>
+            <p class="showcase-meta">Type — TBD · Tool — Figma / WordPress</p>
+          </figcaption>
+        </figure>
+
+        <figure class="showcase-card is-empty">
+          <div class="showcase-thumb">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <span>Reserved for an upcoming project</span>
+          </div>
+          <figcaption>
+            <p class="showcase-name">Next Web Design Project</p>
+            <p class="showcase-meta">Type — TBD · Tool — Figma / WordPress</p>
+          </figcaption>
+        </figure>
 
       </div>
     </div>
@@ -193,7 +251,7 @@
 
   <section id="journey">
     <div class="wrap">
-      <p class="section-kicker">03 — My Path</p>
+      <p class="section-kicker">04 — My Path</p>
       <h2 class="section-title">Where I am, and where I'm headed.</h2>
 
       <ol class="path">
@@ -219,13 +277,23 @@
 
   <section id="contact">
     <div class="wrap contact-close">
-      <p class="section-kicker">04 — Contact</p>
+      <p class="section-kicker">05 — Contact</p>
       <h2 class="section-title contact-title">Let's build something useful.</h2>
       <p class="contact-sub">Have a website idea, a WordPress project, or just want to say hi? I'd like to hear about it.</p>
+
       <div class="contact-links">
-        <a href="mailto:artashaghaghi@gmail.com">artashaghaghi@gmail.com</a>
-        <a href="https://github.com/shaghaghidev" target="_blank" rel="noopener">GitHub — @shaghaghidev</a>
-        <a href="https://instagram.com/shaghaghipv" target="_blank" rel="noopener">Instagram — @shaghaghipv</a>
+        <a class="contact-row" href="mailto:artashaghaghi@gmail.com" aria-label="Email Abolfazl at artashaghaghi@gmail.com">
+          <span class="ci" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span class="cr-text"><span class="cr-label">Email</span><span class="cr-value">artashaghaghi@gmail.com</span></span>
+        </a>
+        <a class="contact-row" href="https://github.com/shaghaghidev" target="_blank" rel="noopener" aria-label="Abolfazl's GitHub profile, username shaghaghidev">
+          <span class="ci" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.15c-3.16.69-3.83-1.36-3.83-1.36-.52-1.32-1.26-1.68-1.26-1.68-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.65 1.24 3.3.95.1-.73.4-1.24.72-1.53-2.52-.29-5.17-1.26-5.17-5.6 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.44.11-3 0 0 .96-.31 3.14 1.16a10.9 10.9 0 015.72 0c2.18-1.47 3.14-1.16 3.14-1.16.62 1.56.23 2.71.11 3 .73.79 1.17 1.8 1.17 3.04 0 4.35-2.65 5.31-5.18 5.59.41.35.77 1.04.77 2.1v3.11c0 .3.21.66.79.55 4.51-1.5 7.77-5.76 7.77-10.78C23.02 5.24 18.27.5 12 .5z"/></svg></span>
+          <span class="cr-text"><span class="cr-label">GitHub</span><span class="cr-value">@shaghaghidev</span></span>
+        </a>
+        <a class="contact-row" href="https://instagram.com/shaghaghipv" target="_blank" rel="noopener" aria-label="Abolfazl's Instagram profile, username shaghaghipv">
+          <span class="ci" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg></span>
+          <span class="cr-text"><span class="cr-label">Instagram</span><span class="cr-value">@shaghaghipv</span></span>
+        </a>
       </div>
     </div>
   </section>
